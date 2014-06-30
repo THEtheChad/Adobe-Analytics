@@ -165,7 +165,12 @@ Events.prototype = {
 	}
 };
 function af(s_code) {
-	this.s_code = s_code;
+	var s = this.s_code = {};
+
+	for(var k in s_code){
+		s[k] = s_code[k];
+	}
+
 	this.buffer = {};
 
 	this._uniq = 0;
